@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
   resources :users
 
-  resources 'homes'
+  resources 'homes' do
+    collection do 
+     get :foundation_info
+     get :contact
+     get :about
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
