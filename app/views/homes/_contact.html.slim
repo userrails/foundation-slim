@@ -1,8 +1,12 @@
 .row
+	#contact_error
+		.large-8.columns
+			= render :partial => "contact_error"
+.row
 	.large-8.columns
 		h2 Fill up below form to add the contact details
 
-= form_for @contact, :url => save_contact_homes_path do |f|
+= form_for @contact, :url => save_contact_homes_path, :remote => true do |f|
 	.row
 		.large-4.columns
 			= f.label :name

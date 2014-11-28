@@ -13,16 +13,14 @@ class HomesController < ApplicationController
 
   def save_contact
   	@contact = Contact.new(contact_params)
-  	if @contact.save
-  		redirect_to homes_path
-  	else
-  		render :action => :contact
-  	end
+  	@contact.save
+  		respond_to do |format|
+        format.js
+      end  	 
   end
 
   private
   def contact_params
   	params.require(:contact).permit!
   end
-
 end

@@ -1,0 +1,10 @@
+<% if @contact.errors.any? %>
+  $("#contact_error").html('<%= escape_javascript render :partial => "contact_error" %>');
+<% else %>
+    alert("Thanks for contact us.");
+    window.location.reload();	
+<% end %>
+$("#contact_name").val("");
+$("#contact_address").val("");
+$("#contact_email").val("");
+$("#contact_message").val("");

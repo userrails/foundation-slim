@@ -1,0 +1,8 @@
+- if @contact.errors.any?
+  #error_explaination 
+    h5
+      = pluralize(@contact.errors.count, "error ") 
+      span prohibited this Contact from being saved
+      ul
+        - @contact.errors.full_messages.each do |msg|
+          li= msg
