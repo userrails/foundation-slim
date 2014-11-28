@@ -6,6 +6,7 @@ Rails.application.routes.draw do
      get :foundation_info
      get :contact
      get :about
+     post :save_contact
     end
   end
 
